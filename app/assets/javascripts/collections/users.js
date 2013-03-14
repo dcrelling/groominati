@@ -1,5 +1,5 @@
-Groominati.Collections.Users = Backbone.Collection.extend({
+var UsersCollection = Backbone.Collection.extend({
 
-  model: Groominati.Models.User,
-  urlRoot: '/users'
+  model: UserModel,
+  url: '/users.json'
 });

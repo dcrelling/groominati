@@ -1,6 +1,6 @@
-Groominati.Collections.Reviews = Backbone.Collection.extend({
+var ReviewsCollection = Backbone.Collection.extend({
 
-  model: Groominati.Models.Review,
-  urlRoot: '/reviews'
+  model: ReviewModel,
+  url: '/reviews.json'
 
 });

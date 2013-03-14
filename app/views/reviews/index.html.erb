@@ -1,11 +1,11 @@
 <h1>Listing reviews</h1>
 
-<!-- app/views/tasks/index.html.erb -->
-<%= content_for :javascript do -%>
+<!-- app/views/reviews/index.html.erb -->
+
     <%= javascript_tag do %>
-        Groominati.initialize({ tasks: <%== @reviews.to_json %> });
+        Groominati.initialize();
     <% end %>
-<% end -%>
+
 
 <table>
   <tr>

@@ -3,7 +3,7 @@
 <!-- app/views/reviews/index.html.erb -->
 
     <%= javascript_tag do %>
-        Groominati.initialize();
+        Groominati.initialize({reviews: <%== @reviews.to_json %>});
     <% end %>
 
 

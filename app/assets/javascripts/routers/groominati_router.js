@@ -7,7 +7,6 @@ routes: {
 },
 
 index: function(){
-    alert('Hello, world!  This is a Backbone router action.');
     //var reviewsCollection = new ReviewsCollection();
     //reviewsCollection.fetch({
         //success: function() {

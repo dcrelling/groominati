@@ -5,19 +5,21 @@ var ReviewView = Backbone.View.extend({
     events: {
     "click a.editReview": "editReview",
     "click a.showReview": "showReview",
-    "click a.deleteReview": "deleteReview"
+    "click a.deleteReview": "deleteReview",
+    "click a.newReview": "newReview"
     },
 
-    initialize: function(){
+    initialize: function(options){
     },
 
     render: function(){
-        this.$el.html(JST["reviews/review"]({ model: this.model }));
+        this.$el.html(JST["reviews/review"]({ model: this.model, index: this.options.index }));
         return this;
     },
 
     editReview: function(){
-        var editReviewView = new EditReview();
+        alert(this.model.get('title'));
+        var editReviewView = new EditReview({model: this.model});
         console.log(editReviewView.el);
         $('body').html(editReviewView.render().$el);
     },
@@ -27,6 +29,10 @@ var ReviewView = Backbone.View.extend({
     },
 
     deleteReview: function(){
+        alert("delete");
+    },
+
+    newReview: function(){
         alert("delete");
     }
 });

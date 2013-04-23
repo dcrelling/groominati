@@ -2,10 +2,10 @@
 <form>
 <div class="field">
     <label for="review_title">Title</label><br />
-    <input id="review_title" name="review[title]" size="30" type="text" value="My Frist Review" />
+    <input id="review_title" name="review[title]" size="30" type="text" value=<%= model.escape('title') %> />
   </div>
   <div class="field">
     <label for="review_content">Content</label><br />
-    <input id="review_content" name="review[content]" size="30" type="text" value="This is my first review." />
+    <input id="review_content" name="review[content]" size="30" type="text" value=<%= model.escape('content') %> />
   </div>
 </form>

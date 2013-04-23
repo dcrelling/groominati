@@ -18,7 +18,6 @@ var ReviewView = Backbone.View.extend({
     },
 
     editReview: function(){
-        alert(this.model.get('title'));
         var editReviewForm = new EditReviewForm({model: this.model});
         console.log(editReviewForm.el);
         $('body').html(editReviewForm.render().$el);

@@ -1,12 +1,12 @@
 <h1>Edit Review</h1>
 <form>
 <div class="field">
-    <label for="reviewTitle">Title</label><br />
-    <input id="reviewTitle" name="review[title]" size="30" type="text" value=<%= model.escape('title') %> />
+    <label for="title">Title</label><br />
+    <input id="title" name="review[title]" size="30" type="text" value=<%= model.get('title') %> />
   </div>
   <div class="field">
-    <label for="reviewContent">Content</label><br />
-    <input id="reviewContent" name="review[content]" size="30" type="text" value=<%= model.escape('content') %> />
+    <label for="content">Content</label><br />
+    <input id="content" name="review[content]" size="30" type="text" value=<%= model.get('content') %> />
   </div>
   <div><button class="submitButton" id="editReviewSubmit" type="button">Submit</button></div>
 </form>

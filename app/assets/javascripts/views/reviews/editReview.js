@@ -11,10 +11,10 @@ events: {
     },
 
   formSubmit: function(evt){
-      alert("shit working");
       evt.preventDefault();
       var data = Backbone.Syphon.serialize(this);
       this.model.set(data);
+      this.model.save();
   }, 
 
 });

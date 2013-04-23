@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require backbone.syphon
 //= require groominati
 //= require_tree ../templates
 //= require_tree ./models

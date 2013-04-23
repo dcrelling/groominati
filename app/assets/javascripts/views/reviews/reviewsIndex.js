@@ -4,7 +4,7 @@ var ReviewsIndex = Backbone.View.extend({
         var self = this;
         this.$el.html(JST["reviews/index"]());
         this.collection.each(function(review, index){
-            var reviewView = new ReviewView({model: review, index: index});
+            var reviewView = new ReviewView({model: review});
             self.$('table').append(reviewView.render().el);
         });
         return this;

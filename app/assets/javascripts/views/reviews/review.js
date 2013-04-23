@@ -13,15 +13,15 @@ var ReviewView = Backbone.View.extend({
     },
 
     render: function(){
-        this.$el.html(JST["reviews/review"]({ model: this.model, index: this.options.index }));
+        this.$el.html(JST["reviews/review"]({ model: this.model}));
         return this;
     },
 
     editReview: function(){
         alert(this.model.get('title'));
-        var editReviewView = new EditReview({model: this.model});
-        console.log(editReviewView.el);
-        $('body').html(editReviewView.render().$el);
+        var editReviewForm = new EditReviewForm({model: this.model});
+        console.log(editReviewForm.el);
+        $('body').html(editReviewForm.render().$el);
     },
 
     showReview: function(){

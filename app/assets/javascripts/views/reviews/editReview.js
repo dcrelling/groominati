@@ -1,7 +1,7 @@
 var EditReview = Backbone.View.extend({
   
 events: {
-    "click button.editButton": "edit"
+    "click button.submitButton": "edit"
     },
 
   render: function () {

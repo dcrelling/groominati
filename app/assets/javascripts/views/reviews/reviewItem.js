@@ -26,6 +26,6 @@ var ReviewItem = Backbone.View.extend({
     },
 
     deleteReview: function(){
-        alert("delete");
+       this.model.destroy();
     }
 });

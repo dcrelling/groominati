@@ -1,25 +1,23 @@
-var ReviewView = Backbone.View.extend({
+var ReviewItem = Backbone.View.extend({
 
     tagName: "tr",
 
     events: {
     "click a.editReview": "editReview",
     "click a.showReview": "showReview",
-    "click a.deleteReview": "deleteReview",
-    "click a.newReview": "newReview"
+    "click a.deleteReview": "deleteReview"
     },
 
     initialize: function(options){
     },
 
     render: function(){
-        this.$el.html(JST["reviews/review"]({ model: this.model}));
+        this.$el.html(JST["reviews/reviewItem"]({ model: this.model}));
         return this;
     },
 
     editReview: function(){
         var editReviewForm = new EditReviewForm({model: this.model});
-        console.log(editReviewForm.el);
         $('body').html(editReviewForm.render().$el);
     },
 
@@ -28,10 +26,6 @@ var ReviewView = Backbone.View.extend({
     },
 
     deleteReview: function(){
-        alert("delete");
-    },
-
-    newReview: function(){
         alert("delete");
     }
 });

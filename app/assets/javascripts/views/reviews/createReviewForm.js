@@ -1,4 +1,4 @@
-var EditReviewForm = Backbone.View.extend({
+var CreateReviewForm = Backbone.View.extend({
   
 events: {
     "click button.submitButton": "formSubmit"
@@ -6,15 +6,15 @@ events: {
 
   render: function () {
         var self = this;
-        this.$el.html(JST["reviews/editReview"]({model: this.model}));
+        this.$el.html(JST["reviews/createReviewForm"]({model: this.model}));
         return this;
     },
 
   formSubmit: function(evt){
       evt.preventDefault();
       var data = Backbone.Syphon.serialize(this);
-      this.model.set(data);
-      this.model.save();
+      var reviewModel = new ReviewModel(data);
+      reviewModel.save();
   }, 
 
 });

@@ -31,6 +31,10 @@ gem "backbone-on-rails", "~> 0.9.10.0"
 gem 'ejs'
 gem 'aws-sdk'
 gem 'paperclip'
+gem 'acts_as_follower'
+gem 'acts_as_commentable_with_threading'
+gem 'public_activity'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

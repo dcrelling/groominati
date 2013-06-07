@@ -16,6 +16,9 @@ Groominati::Application.configure do
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
+  #default url options per devise install
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -34,6 +37,9 @@ Groominati::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # per devise suggestion deploying Rails 3.1+ on Heroku, you may want to set
+  config.assets.initialize_on_precompile = false
 
   #paperclip need to know the path to ImageMagick
   Paperclip.options[:command_path] = "/usr/local/bin/"

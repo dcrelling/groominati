@@ -80,4 +80,20 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # POST /users/1/follow
+  # POST /users/1/follow.json
+  def follow
+    # need to get the logged in use the follow the user that they want to follow
+    #the user with the corresponding user id passed in the POST
+
+  end
+
+  # POST /users/1/unfollow
+  # POST /users/1/unfollow
+  def unfollow
+    # need to get the logged in use the follow the user that they want to follow
+    #the user with the corresponding user id passed in the POST
+
+  end
 end

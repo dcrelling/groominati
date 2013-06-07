@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'acts_as_follower'
 gem 'acts_as_commentable_with_threading'
 gem 'public_activity'
+gem 'devise'
 
 
 # To use ActiveModel has_secure_password

@@ -1,19 +1,13 @@
 Groominati::Application.routes.draw do
   resources :user_profiles
-
-
   devise_for :users
-
   resources :posts
-
-
   resources :users do
     member do
       post 'follow'
+      post 'unfollow'
     end
   end
-
-
 
   resources :reviews
 

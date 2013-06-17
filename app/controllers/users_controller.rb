@@ -90,7 +90,6 @@ class UsersController < ApplicationController
   def follow
     # need to get the logged in use the follow the user that they want to follow
     #the user with the corresponding user id passed in the POST
-
   end
 
   # POST /users/1/unfollow

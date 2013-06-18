@@ -88,15 +88,41 @@ class UsersController < ApplicationController
   # POST /users/1/follow
   # POST /users/1/follow.json
   def follow
-    # need to get the logged in use the follow the user that they want to follow
-    #the user with the corresponding user id passed in the POST
+    @user = User.find(params[:id])
+
+    if current_user
+      if current_user == @user
+        flash[:error] = "You cannot follow yourself."
+      else
+        current_user.follow(@user)
+        #RecommenderMailer.new_follower(@user).deliver if @user.notify_new_follower
+        flash[:notice] = "You are now following #{@user.email}."
+      end
+    else
+      flash[:error] = "You must <a href='/users/sign_in'>login</a> to follow #{@user.email}.".html_safe
+    end
+
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+    end
   end
 
   # POST /users/1/unfollow
   # POST /users/1/unfollow
   def unfollow
-    # need to get the logged in use the follow the user that they want to follow
-    #the user with the corresponding user id passed in the POST
+    @user = User.find(params[:id])
 
+    if current_user
+      current_user.stop_following(@user)
+      flash[:notice] = "You are no longer following #{@user.email}."
+    else
+      flash[:error] = "You must <a href='/users/sign_in'>login</a> to unfollow #{@user.email}.".html_safe
+    end
+
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+    end
   end
 end

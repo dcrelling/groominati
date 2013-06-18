@@ -1,5 +1,4 @@
 <h1>Listing users</h1>
-
 <table>
   <tr>
    <!-- <th>Name</th>       -->
@@ -14,8 +13,8 @@
    <!-- <td><%#<%= user.name %></td>     -->
     <td><%= user.email %></td>
     <!--<td><%#<%= image_tag user.avatar.url(:thumb) %></td>  -->
-    <td><%= link_to 'Show Profile', user.user_profile %></td>
-    <td><%= link_to 'Edit Profile', edit_user_profile_path(user.user_profile) %></td>
+    <!--<td><%#<%= link_to 'Show Profile', user.user_profile %></td>   -->
+    <!--<td><%#<%= link_to 'Edit Profile', edit_user_profile_path(user.user_profile) %></td>    -->
     <td><%= link_to 'Follow', follow_user_path(user), :method => :post %></td>
     <td><%= link_to 'Unfollow', unfollow_user_path(user), :method => :post %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,5 +23,11 @@
 </table>
 
 <br />
+
+<% if user_signed_in? %>
+    <li>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    </li>
+<% end %>
 
 <%#<%= link_to 'New User', new_user_path %>

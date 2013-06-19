@@ -2,9 +2,10 @@
 
 <table>
   <tr>
+    <th>User Name</th>
+    <th>Email</th>
     <th>First name</th>
     <th>Last name</th>
-    <th>User Id</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +13,10 @@
 
 <% @user_profiles.each do |user_profile| %>
   <tr>
+    <td><%= user_profile.user_name %></td>
+    <td><%= user_profile.user.email %></td>
     <td><%= user_profile.first_name %></td>
     <td><%= user_profile.last_name %></td>
-    <td><%= user_profile.user_id %></td>
     <td><%= link_to 'Show', user_profile %></td>
     <td><%= link_to 'Edit', edit_user_profile_path(user_profile) %></td>
     <td><%= link_to 'Destroy', user_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

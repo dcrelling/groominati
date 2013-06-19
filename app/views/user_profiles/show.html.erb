@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>User Name:</b>
+  <%= @user_profile.user_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user_profile.user.email %>
+</p>
+
+<p>
   <b>First name:</b>
   <%= @user_profile.first_name %>
 </p>
@@ -8,6 +18,10 @@
 <p>
   <b>Last name:</b>
   <%= @user_profile.last_name %>
+</p>
+
+<p>
+  <%= image_tag @user_profile.avatar.url(:medium) %>
 </p>
 
 

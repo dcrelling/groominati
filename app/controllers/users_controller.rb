@@ -96,10 +96,10 @@ class UsersController < ApplicationController
       else
         current_user.follow(@user)
         #RecommenderMailer.new_follower(@user).deliver if @user.notify_new_follower
-        flash[:notice] = "You are now following #{@user.email}."
+        flash[:notice] = "You are now following #{@user.user_profile.user_name}."
       end
     else
-      flash[:error] = "You must <a href='/users/sign_in'>login</a> to follow #{@user.email}.".html_safe
+      flash[:error] = "You must <a href='/users/sign_in'>login</a> to follow #{@user.user_profile.user_name}.".html_safe
     end
 
     respond_to do |format|
@@ -115,9 +115,9 @@ class UsersController < ApplicationController
 
     if current_user
       current_user.stop_following(@user)
-      flash[:notice] = "You are no longer following #{@user.email}."
+      flash[:notice] = "You are no longer following #{@user.user_profile.user_name}."
     else
-      flash[:error] = "You must <a href='/users/sign_in'>login</a> to unfollow #{@user.email}.".html_safe
+      flash[:error] = "You must <a href='/users/sign_in'>login</a> to unfollow #{@user.user_profile.user_name}.".html_safe
     end
 
     respond_to do |format|

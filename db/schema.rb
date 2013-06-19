@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616220422) do
+ActiveRecord::Schema.define(:version => 20130619112623) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20130616220422) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "user_name"
   end
 
   create_table "users", :force => true do |t|

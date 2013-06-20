@@ -15,6 +15,14 @@ class UserProfilesController < ApplicationController
   def show
     @user_profile = UserProfile.find(params[:id])
 
+    #refactor this code out also we can probably just
+    #get the avatar url and put it into a hash to pass to the view will be faster
+    @followed_profile_list = Array.new
+    followed_users = @user_profile.user.all_follows
+    followed_users.each do |followed|
+      @followed_profile_list << User.find(followed.followable_id).user_profile
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user_profile }

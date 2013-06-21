@@ -17,10 +17,16 @@ class UserProfilesController < ApplicationController
 
     #refactor this code out also we can probably just
     #get the avatar url and put it into a hash to pass to the view will be faster
-    @followed_profile_list = Array.new
+    #also need to load up the posts better
+    @followed_users_profile_list = Array.new
+    @followed_users_post_list = Array.new
     followed_users = @user_profile.user.all_follows
     followed_users.each do |followed|
-      @followed_profile_list << User.find(followed.followable_id).user_profile
+      @followed_users_profile_list << User.find(followed.followable_id).user_profile
+      posts = User.find(followed.followable_id).posts
+      posts.each do |post|
+        @followed_users_post_list << post
+      end
     end
 
     respond_to do |format|

@@ -4,6 +4,12 @@
   <b>Content:</b>
   <%= @post.content %>
 </p>
+<p>
+  <%= image_tag @post.asset.url(:medium) %>
+</p>
+<p>
+  <%#<%= link_to 'Comment', add_new_comment_post_path(@post.id), :method => :post %>
+</p>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

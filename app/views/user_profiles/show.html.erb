@@ -26,10 +26,23 @@
 
 <p>
   <b>Followed Users:</b></br>
-  <% @followed_profile_list.each do |followed| %>
+  <% @followed_users_profile_list.each do |followed| %>
   <%= image_tag followed.avatar.url(:thumb) %>
   <%end%>
 </p>
+
+
+  <b>Followed Users Posts:</b></br>
+  <% @followed_users_post_list.each do |post| %>
+    <p>
+      <b>Content:</b>
+      <%= post.content %>
+    </p>
+    <p>
+      <%= image_tag post.asset.url(:medium) %>
+    </p>
+  <%end%>
+
 
 
 <%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |

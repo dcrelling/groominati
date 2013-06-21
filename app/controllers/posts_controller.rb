@@ -40,7 +40,9 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    #@post = Post.new(params[:post])
+    #Refactor maybe is this the best way to associate a post with the current user?
+    @post = current_user.posts.build(params[:post])
 
     respond_to do |format|
       if @post.save
@@ -80,4 +82,5 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

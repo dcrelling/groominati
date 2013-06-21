@@ -2,6 +2,9 @@ Groominati::Application.routes.draw do
   resources :user_profiles
   devise_for :users
   resources :posts
+  resources :comments
+
+
   resources :users do
     member do
       post 'follow'

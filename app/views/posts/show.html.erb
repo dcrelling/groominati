@@ -9,6 +9,10 @@
 </p>
 <p>
   <%#<%= link_to 'Comment', add_new_comment_post_path(@post.id), :method => :post %>
+  <% @post.tags.any? %>
+  <% @post.tags.each do |tag| %>
+      <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+  <% end %>
 </p>
 
 

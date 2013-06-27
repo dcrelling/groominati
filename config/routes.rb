@@ -14,6 +14,8 @@ Groominati::Application.routes.draw do
 
   resources :reviews
 
+  match 'tagged' => 'posts#tagged', :as => 'tagged' #for posts that have been tagged
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

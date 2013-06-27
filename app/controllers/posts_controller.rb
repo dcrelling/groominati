@@ -83,4 +83,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.postall
+    end
+  end
+
 end

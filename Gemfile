@@ -36,6 +36,8 @@ gem 'acts_as_follower'
 gem 'acts_as_commentable_with_threading'
 gem 'public_activity'
 gem 'devise'
+gem 'awesome_nested_set'
+gem "acts-as-taggable-on", "~> 2.4.1"
 
 
 # To use ActiveModel has_secure_password

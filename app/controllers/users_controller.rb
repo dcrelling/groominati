@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
 
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    add_avatar_url
+
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -123,6 +126,12 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
+  end
+
+  def add_avatar_url
+    @users.each do |user|
+      user[:avatar_url] = user.user_profile.avatar.url
     end
   end
 end

@@ -1,14 +1,12 @@
- Groominati = {
-  Models: {},
-  Collections: {},
-  Views: {},
-  Routers: {},
-  reviewsCollection: null,
-  initialize: function(data) {
-    this.reviewsCollection = new ReviewsCollection(data.reviews);
-    new  GroominatiRouter();
-    Backbone.history.start();
-  }
-};
+var Groominati = new Marionette.Application();
 
+Groominati.addRegions({
+  mainRegion: "#main-region"
+});
 
+Groominati.on("initialize:after", function() {
+
+  console.log("Groominati has started!");
+  Backbone.history.start();
+
+});

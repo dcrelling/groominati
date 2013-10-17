@@ -28,7 +28,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "backbone-on-rails", "~> 0.9.10.0"
+gem "backbone-on-rails", "~> 1.0.0.1"
 gem 'ejs'
 gem 'aws-sdk'
 gem 'paperclip'
@@ -38,6 +38,7 @@ gem 'public_activity'
 gem 'devise'
 gem 'awesome_nested_set'
 gem "acts-as-taggable-on", "~> 2.4.1"
+gem "twitter-text"
 
 
 # To use ActiveModel has_secure_password

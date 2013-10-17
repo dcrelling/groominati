@@ -12,13 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jqm-config
+//= require jquery.mobile-1.3.2
+//= require json2
 //= require underscore
 //= require backbone
+//= require backbone.marionette
 //= require backbone.syphon
+//= require Backbone.ModelBinder
+//= require Backbone.CollectionBinder
 //= require groominati
 //= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
 //= require_tree .

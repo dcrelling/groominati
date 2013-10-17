@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   # GET /posts
   # GET /posts.json
   def index
@@ -43,6 +44,7 @@ class PostsController < ApplicationController
     #@post = Post.new(params[:post])
     #Refactor maybe is this the best way to associate a post with the current user?
     @post = current_user.posts.build(params[:post])
+    @post.tag_list = @post.extract_tags
 
     respond_to do |format|
       if @post.save

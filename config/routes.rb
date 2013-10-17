@@ -1,4 +1,8 @@
 Groominati::Application.routes.draw do
+
+  #root to: "main#index"
+  match "/" => "main#index"
+
   resources :user_profiles
   devise_for :users
   resources :posts
@@ -15,6 +19,7 @@ Groominati::Application.routes.draw do
   resources :reviews
 
   match 'tagged' => 'posts#tagged', :as => 'tagged' #for posts that have been tagged
+
 
 
   # The priority is based upon order of creation:
